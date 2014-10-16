@@ -37,6 +37,19 @@ int Test_IsIsosceles(int a, int b, int c)
 	return 0;
 }
 
+int Test_IsScalene(int a, int b, int c)
+{
+        int result;
+
+        result = triangle(a, b, c);
+        if(result == IsScalene)
+        {
+                return 1;
+        }
+        return 0;
+}
+
+
 int Test_NotATriangle(int a, int b, int c)
 {
 	int result = triangle(a, b, c);
@@ -44,6 +57,15 @@ int Test_NotATriangle(int a, int b, int c)
 		return 1;
 	return 0;
 }
+
+int Test_IsInvalidInput(int a, int b, int c)
+{
+        int result = triangle(a, b, c);
+        if(result == InvalidInput)
+                return 1;
+        return 0;
+}
+
 
 void OneBoundary()
 {
@@ -78,6 +100,40 @@ void ThreeBoundary()
 	CU_ASSERT(Test_NotATriangle(200, 200, 200));
 }
 
+void IsoscelesClass()
+{
+	CU_ASSERT(Test_IsIsosceles(2, 2, 3));
+	CU_ASSERT(Test_IsIsosceles(4, 5, 4));
+	CU_ASSERT(Test_IsIsosceles(7, 3, 7));
+}
+
+void EquilateralClass()
+{
+        CU_ASSERT(Test_IsEquilateral(2, 2, 2));
+        CU_ASSERT(Test_IsEquilateral(101, 101, 101));
+        CU_ASSERT(Test_IsEquilateral(199, 199, 199));
+}
+
+void ScaleneClass()
+{
+	CU_ASSERT(Test_IsScalene(2, 3, 4));
+	CU_ASSERT(Test_IsScalene(2, 198, 199));
+	CU_ASSERT(Test_IsScalene(10, 11, 12));
+}
+
+void InvalidInputClass()
+{
+	CU_ASSERT(Test_IsInvalidInput(-1, 1, 4));
+	CU_ASSERT(Test_IsInvalidInput(1, -1, 4));
+	CU_ASSERT(Test_IsInvalidInput(2, 1, -4));
+	CU_ASSERT(Test_IsInvalidInput(201, 1, 4));
+        CU_ASSERT(Test_IsInvalidInput(1, 201, 4));
+        CU_ASSERT(Test_IsInvalidInput(2, 1, 202));
+	CU_ASSERT(Test_IsInvalidInput(-1, 1, 400));
+        CU_ASSERT(Test_IsInvalidInput(1, -1, 400));
+        CU_ASSERT(Test_IsInvalidInput(200, 1, -4));
+	CU_ASSERT(Test_IsInvalidInput(200, -1, -4));
+}
 
 int AddTestMainModule()
 {
@@ -88,5 +144,10 @@ int AddTestMainModule()
 	CU_add_test(pSuite, "TwoBoundary", TwoBoundary);
 	CU_add_test(pSuite, "ThreeBoundary", ThreeBoundary);
 	
+	pSuite = CU_add_suite("EquivalenceClassTest", InitSuite, EndSuite);
+	CU_add_test(pSuite, "IsoscelesClass", IsoscelesClass);
+	CU_add_test(pSuite, "EquilateralClass", EquilateralClass);
+	CU_add_test(pSuite, "ScaleneClass", ScaleneClass);
+	CU_add_test(pSuite, "InvalidInputClass", InvalidInputClass);
 	return 0;
 }
