@@ -96,8 +96,8 @@ void TwoBoundary()
 
 void ThreeBoundary()
 {
-	CU_ASSERT(Test_NotATriangle(1, 1, 1));
-	CU_ASSERT(Test_NotATriangle(200, 200, 200));
+	CU_ASSERT(Test_IsEquilateral(1, 1, 1));
+	CU_ASSERT(Test_IsEquilateral(200, 200, 200));
 }
 
 void IsoscelesClass()
@@ -145,6 +145,22 @@ void ScaleneEdgeClass()
         CU_ASSERT(Test_IsScalene(2, 3, 4));
 }
 
+void NotTriangleClass()
+{
+	CU_ASSERT(Test_NotATriangle(1, 2, 3));
+	CU_ASSERT(Test_NotATriangle(1, 4, 5));
+	CU_ASSERT(Test_NotATriangle(1, 4, 200));
+}
+
+void NotTriangleEdgeClass()
+{
+        CU_ASSERT(Test_IsInvalidInput(-1, 2, 3));
+        CU_ASSERT(Test_NotATriangle(1, 2, 3));
+        CU_ASSERT(Test_NotATriangle(1, 4, 201));
+	CU_ASSERT(Test_IsIsosceles(1, 200, 200));
+}
+
+
 void InvalidInputClass()
 {
 	CU_ASSERT(Test_IsInvalidInput(-1, 1, 4));
@@ -159,8 +175,6 @@ void InvalidInputClass()
 	CU_ASSERT(Test_IsInvalidInput(200, -1, -4));
 }
 
-
-
 int AddTestMainModule()
 {
 	CU_pSuite pSuite = NULL;
@@ -174,9 +188,13 @@ int AddTestMainModule()
 	CU_add_test(pSuite, "IsoscelesClass", IsoscelesClass);
 	CU_add_test(pSuite, "EquilateralClass", EquilateralClass);
 	CU_add_test(pSuite, "ScaleneClass", ScaleneClass);
+	CU_add_test(pSuite, "NotTriangleClass", NotTriangleClass);
 	CU_add_test(pSuite, "InvalidInputClass", InvalidInputClass);
 
 	pSuite = CU_add_suite("EdgeTest", InitSuite, EndSuite);
-
+	CU_add_test(pSuite, "IsoscelesEdgeClass", IsoscelesClass);
+        CU_add_test(pSuite, "EquilateralEdgeClass", EquilateralClass);
+        CU_add_test(pSuite, "ScaleneEdgeClass", ScaleneClass);
+        CU_add_test(pSuite, "NotTriangleEdgeClass", NotTriangleClass);
 	return 0;
 }
