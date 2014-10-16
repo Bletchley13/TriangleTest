@@ -107,6 +107,15 @@ void IsoscelesClass()
 	CU_ASSERT(Test_IsIsosceles(7, 3, 7));
 }
 
+void IsoscelesEdgeClass()
+{
+        CU_ASSERT(Test_IsInvalidInput(-1, -1, 2));
+        CU_ASSERT(Test_IsInvalidInput(201, 5, 201));
+        CU_ASSERT(Test_IsInvalidInput(-3, -3, 201));
+	CU_ASSERT(Test_IsIsosceles(2, 2, 3));
+	CU_ASSERT(Test_IsIsosceles(200, 199, 200));
+}
+
 void EquilateralClass()
 {
         CU_ASSERT(Test_IsEquilateral(2, 2, 2));
@@ -114,11 +123,26 @@ void EquilateralClass()
         CU_ASSERT(Test_IsEquilateral(199, 199, 199));
 }
 
+void EquilateralEdgeClass()
+{
+        CU_ASSERT(Test_IsInvalidInput(-2, -2, -2));
+        CU_ASSERT(Test_IsInvalidInput(201, 201, 201));
+        CU_ASSERT(Test_IsEquilateral(199, 199, 199));
+	CU_ASSERT(Test_IsEquilateral(1, 1, 1));
+}
+
 void ScaleneClass()
 {
 	CU_ASSERT(Test_IsScalene(2, 3, 4));
 	CU_ASSERT(Test_IsScalene(2, 198, 199));
 	CU_ASSERT(Test_IsScalene(10, 11, 12));
+}
+
+void ScaleneEdgeClass()
+{
+        CU_ASSERT(Test_IsInvalidInput(-2, 3, 4));
+        CU_ASSERT(Test_IsInvalidInput(2, 198, 201));
+        CU_ASSERT(Test_IsScalene(2, 3, 4));
 }
 
 void InvalidInputClass()
@@ -135,6 +159,8 @@ void InvalidInputClass()
 	CU_ASSERT(Test_IsInvalidInput(200, -1, -4));
 }
 
+
+
 int AddTestMainModule()
 {
 	CU_pSuite pSuite = NULL;
@@ -149,5 +175,8 @@ int AddTestMainModule()
 	CU_add_test(pSuite, "EquilateralClass", EquilateralClass);
 	CU_add_test(pSuite, "ScaleneClass", ScaleneClass);
 	CU_add_test(pSuite, "InvalidInputClass", InvalidInputClass);
+
+	pSuite = CU_add_suite("EdgeTest", InitSuite, EndSuite);
+
 	return 0;
 }
