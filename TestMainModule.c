@@ -37,53 +37,56 @@ int Test_IsIsosceles(int a, int b, int c)
 	return 0;
 }
 
-void Test1()
+int Test_NotATriangle(int a, int b, int c)
 {
-	//Normal Boundary Value
-	CU_ASSERT(Test_IsEquilateral(3, 4, 7));
+	int result = triangle(a, b, c);
+	if(result == NotTriangle)
+		return 1;
+	return 0;
 }
 
-void Test2()
+void OneBoundary()
 {
-	CU_ASSERT(Test_IsIsosceles(4, 5, 10));
+	//Normal Boundary Value
+	CU_ASSERT(Test_IsIsosceles(1, 100, 100));
+	CU_ASSERT(Test_NotATriangle(200, 100, 100));
+	CU_ASSERT(Test_IsIsosceles(100, 1, 100));
+	CU_ASSERT(Test_NotATriangle(100, 200, 100));
+	CU_ASSERT(Test_IsIsosceles(100, 100, 1));
+	CU_ASSERT(Test_NotATriangle(100, 100, 200));
 }
+
+void TwoBoundary()
+{
+	CU_ASSERT(Test_NotATriangle(100, 1, 1));
+	CU_ASSERT(Test_NotATriangle(100, 1, 200));
+        CU_ASSERT(Test_NotATriangle(100, 200, 1));
+	CU_ASSERT(Test_IsIsosceles(100, 200, 200));
+        CU_ASSERT(Test_NotATriangle(1, 100, 1));
+	CU_ASSERT(Test_NotATriangle(1, 100, 200));
+        CU_ASSERT(Test_NotATriangle(200, 100, 1));
+	CU_ASSERT(Test_IsIsosceles(200, 100, 200));
+        CU_ASSERT(Test_NotATriangle(1, 1, 100));
+	CU_ASSERT(Test_NotATriangle(1, 200, 100));
+        CU_ASSERT(Test_NotATriangle(200, 1, 100));
+	CU_ASSERT(Test_IsIsosceles(200, 200, 100));
+}
+
+void ThreeBoundary()
+{
+	CU_ASSERT(Test_NotATriangle(1, 1, 1));
+	CU_ASSERT(Test_NotATriangle(200, 200, 200));
+}
+
 
 int AddTestMainModule()
 {
 	CU_pSuite pSuite = NULL;
 
 	pSuite = CU_add_suite("BoundaryValueTest", InitSuite, EndSuite);  
-
-	if(NULL == pSuite)
-	{
-		//return 1;
-	}
+	CU_add_test(pSuite, "OneBoundary", OneBoundary);
+	CU_add_test(pSuite, "TwoBoundary", TwoBoundary);
+	CU_add_test(pSuite, "ThreeBoundary", ThreeBoundary);
 	
-	if( NULL == CU_add_test(pSuite, "Test1", Test1) ||
-		NULL == CU_add_test(pSuite, "Test2", Test2))
-	{
-		return 1;
-	}
-	
-	/***........***************/
-	/*
-	CU_TestInfo testcases[] = {
-        {"Test1:", Test1},
-        {"Test2:", Test2},
-        CU_TEST_INFO_NULL
-	};
-
-	CU_SuiteInfo suites[] = {
-		{"Testing the function cal_num:", InitSuite, EndSuite, testcases},
-        CU_SUITE_INFO_NULL
-	};
-
-	if(CUE_SUCCESS != CU_register_suites(suites))
-	{
-		return 1;
-	}
-	*/
-	/************************************/
-
 	return 0;
 }
