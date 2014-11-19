@@ -175,10 +175,22 @@ void InvalidInputClass()
 	CU_ASSERT(Test_IsInvalidInput(200, -1, -4));
 }
 
+void TestC0_1()
+{
+	CU_ASSERT(Test_IsEquilateral(37, 37, 37));
+	CU_ASSERT(Test_IsIsosceles(37, 39, 37));
+	CU_ASSERT(Test_IsScalene(37, 38, 39));
+	CU_ASSERT(Test_NotATriangle(1, 2, 3));
+	CU_ASSERT(Test_NotATriangle(1, 3, 2));
+	CU_ASSERT(Test_NotATriangle(3, 2, 1));
+}
+
 int AddTestMainModule()
 {
 	CU_pSuite pSuite = NULL;
-
+	pSuite = CU_add_suite("C0 Coverage Test", InitSuite, EndSuite);
+	CU_add_test(pSuite, "C0-1", TestC0_1);
+/*
 	pSuite = CU_add_suite("BoundaryValueTest", InitSuite, EndSuite);  
 	CU_add_test(pSuite, "OneBoundary", OneBoundary);
 	CU_add_test(pSuite, "TwoBoundary", TwoBoundary);
@@ -196,5 +208,6 @@ int AddTestMainModule()
         CU_add_test(pSuite, "EquilateralEdgeClass", EquilateralClass);
         CU_add_test(pSuite, "ScaleneEdgeClass", ScaleneClass);
         CU_add_test(pSuite, "NotTriangleEdgeClass", NotTriangleClass);
+*/
 	return 0;
 }

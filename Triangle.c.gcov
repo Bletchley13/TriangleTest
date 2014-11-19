@@ -1,0 +1,21 @@
+        -:    0:Source:Triangle.c
+        -:    0:Graph:Triangle.gcno
+        -:    0:Data:Triangle.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "Triangle.h"
+        -:    2:
+        -:    3:
+        6:    4:int triangle(int a, int b, int c)
+        -:    5:{
+        6:    6:	if( a < 0 || a > 200)return InvalidInput;
+        6:    7:	if( b < 0 || b > 200)return InvalidInput;
+        6:    8:	if( c < 0 || c > 200)return InvalidInput;
+        -:    9:
+        6:   10:	int match = (a==b) + (b==c) + (c==a);
+        6:   11:	if ( a + b <= c || b + c <= a || a + c <= b)return NotTriangle;
+        3:   12:	if( match ==1 ) return IsIsosceles;
+        2:   13:	if( match >1 ) return IsEquilateral;
+        1:   14:	return IsScalene;
+        -:   15:}
+        -:   16:
