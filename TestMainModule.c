@@ -185,11 +185,31 @@ void TestC0_1()
 	CU_ASSERT(Test_NotATriangle(3, 2, 1));
 }
 
+void TestC1_1()
+{
+        CU_ASSERT(Test_IsInvalidInput(201, 20, 20));
+        CU_ASSERT(Test_IsInvalidInput(20, 201, 20));
+	CU_ASSERT(Test_IsInvalidInput(20, 20, 201));
+}
+
+void TestC2_1()
+{
+        CU_ASSERT(Test_IsInvalidInput(-1, 20, 20));
+        CU_ASSERT(Test_IsInvalidInput(20, -1, 20));
+        CU_ASSERT(Test_IsInvalidInput(20, 20, -1));
+}
+
 int AddTestMainModule()
 {
 	CU_pSuite pSuite = NULL;
-	pSuite = CU_add_suite("C0 Coverage Test", InitSuite, EndSuite);
+	pSuite = CU_add_suite("C1 Coverage Test", InitSuite, EndSuite);
 	CU_add_test(pSuite, "C0-1", TestC0_1);
+	CU_add_test(pSuite, "C1-1", TestC1_1);
+	CU_add_test(pSuite, "C2-1", TestC2_1);
+/*	pSuite = CU_add_suite("C0 Coverage Test", InitSuite, EndSuite);
+	CU_add_test(pSuite, "C0-1", TestC0_1);
+*/
+	
 /*
 	pSuite = CU_add_suite("BoundaryValueTest", InitSuite, EndSuite);  
 	CU_add_test(pSuite, "OneBoundary", OneBoundary);

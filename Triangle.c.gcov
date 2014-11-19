@@ -6,16 +6,39 @@
         -:    1:#include "Triangle.h"
         -:    2:
         -:    3:
-        6:    4:int triangle(int a, int b, int c)
+function triangle called 12 returned 100% blocks executed 100%
+       12:    4:int triangle(int a, int b, int c)
         -:    5:{
-        6:    6:	if( a < 0 || a > 200)return InvalidInput;
-        6:    7:	if( b < 0 || b > 200)return InvalidInput;
-        6:    8:	if( c < 0 || c > 200)return InvalidInput;
+       12:    6:	if( a < 0 || a > 200)return InvalidInput;
+branch  0 taken 11 (fallthrough)
+branch  1 taken 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 10
+       10:    7:	if( b < 0 || b > 200)return InvalidInput;
+branch  0 taken 9 (fallthrough)
+branch  1 taken 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 8
+        8:    8:	if( c < 0 || c > 200)return InvalidInput;
+branch  0 taken 7 (fallthrough)
+branch  1 taken 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 6
         -:    9:
         6:   10:	int match = (a==b) + (b==c) + (c==a);
         6:   11:	if ( a + b <= c || b + c <= a || a + c <= b)return NotTriangle;
+branch  0 taken 5 (fallthrough)
+branch  1 taken 1
+branch  2 taken 4 (fallthrough)
+branch  3 taken 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 3
         3:   12:	if( match ==1 ) return IsIsosceles;
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
         2:   13:	if( match >1 ) return IsEquilateral;
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
         1:   14:	return IsScalene;
         -:   15:}
         -:   16:

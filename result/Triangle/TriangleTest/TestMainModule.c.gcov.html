@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - hello_test.info - Triangle/TriangleTest/TestMainModule.c</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Triangle/TriangleTest</a> - TestMainModule.c<span style="font-size: 80%;"> (source / <a href="TestMainModule.c.func.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">hello_test.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">37</td>
+            <td class="headerCovTableEntry">129</td>
+            <td class="headerCovTableEntryLo">28.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2014-11-20</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntryLo">36.4 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryLo">40.0 %</td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : #include &lt;stdio.h&gt;</a>
+<span class="lineNum">       2 </span>                :            : #include &lt;assert.h&gt;
+<span class="lineNum">       3 </span>                :            : #include &lt;CUnit/Console.h&gt;
+<a name="4"><span class="lineNum">       4 </span>                :            : #include &quot;Triangle.h&quot;</a>
+<span class="lineNum">       5 </span>                :            : 
+<span class="lineNum">       6 </span>                :<span class="lineCov">          1 : int InitSuite()</span>
+<span class="lineNum">       7 </span>                :            : {
+<span class="lineNum">       8 </span>                :<span class="lineCov">          1 :         return 0;</span>
+<a name="9"><span class="lineNum">       9 </span>                :            : } </a>
+<span class="lineNum">      10 </span>                :            : 
+<span class="lineNum">      11 </span>                :<span class="lineCov">          1 : int EndSuite()</span>
+<span class="lineNum">      12 </span>                :            : {
+<span class="lineNum">      13 </span>                :<span class="lineCov">          1 :         return 0;</span>
+<a name="14"><span class="lineNum">      14 </span>                :            : }</a>
+<span class="lineNum">      15 </span>                :            : 
+<span class="lineNum">      16 </span>                :<span class="lineCov">          1 : int Test_IsEquilateral(int a, int b, int c)</span>
+<span class="lineNum">      17 </span>                :            : {
+<span class="lineNum">      18 </span>                :            :         int result;
+<span class="lineNum">      19 </span>                :            : 
+<span class="lineNum">      20 </span>                :<span class="lineCov">          1 :         result = triangle(a, b, c);</span>
+<span class="lineNum">      21 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :         if(result == IsEquilateral)</span>
+<span class="lineNum">      22 </span>                :            :         {
+<span class="lineNum">      23 </span>                :<span class="lineCov">          1 :                 return 1;</span>
+<span class="lineNum">      24 </span>                :            :         }
+<span class="lineNum">      25 </span>                :<span class="lineCov">          1 :         return 0;</span>
+<a name="26"><span class="lineNum">      26 </span>                :            : }</a>
+<span class="lineNum">      27 </span>                :            : 
+<span class="lineNum">      28 </span>                :<span class="lineCov">          1 : int Test_IsIsosceles(int a, int b, int c)</span>
+<span class="lineNum">      29 </span>                :            : {
+<span class="lineNum">      30 </span>                :            :         int result;
+<span class="lineNum">      31 </span>                :            : 
+<span class="lineNum">      32 </span>                :<span class="lineCov">          1 :         result = triangle(a, b, c);</span>
+<span class="lineNum">      33 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :         if(result == IsIsosceles)</span>
+<span class="lineNum">      34 </span>                :            :         {
+<span class="lineNum">      35 </span>                :<span class="lineCov">          1 :                 return 1;</span>
+<span class="lineNum">      36 </span>                :            :         }
+<span class="lineNum">      37 </span>                :<span class="lineCov">          1 :         return 0;</span>
+<a name="38"><span class="lineNum">      38 </span>                :            : }</a>
+<span class="lineNum">      39 </span>                :            : 
+<span class="lineNum">      40 </span>                :<span class="lineCov">          1 : int Test_IsScalene(int a, int b, int c)</span>
+<span class="lineNum">      41 </span>                :            : {
+<span class="lineNum">      42 </span>                :            :         int result;
+<span class="lineNum">      43 </span>                :            : 
+<span class="lineNum">      44 </span>                :<span class="lineCov">          1 :         result = triangle(a, b, c);</span>
+<span class="lineNum">      45 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :         if(result == IsScalene)</span>
+<span class="lineNum">      46 </span>                :            :         {
+<span class="lineNum">      47 </span>                :<span class="lineCov">          1 :                 return 1;</span>
+<span class="lineNum">      48 </span>                :            :         }
+<span class="lineNum">      49 </span>                :<span class="lineCov">          1 :         return 0;</span>
+<span class="lineNum">      50 </span>                :            : }
+<a name="51"><span class="lineNum">      51 </span>                :            : </a>
+<span class="lineNum">      52 </span>                :            : 
+<span class="lineNum">      53 </span>                :<span class="lineCov">          3 : int Test_NotATriangle(int a, int b, int c)</span>
+<span class="lineNum">      54 </span>                :            : {
+<span class="lineNum">      55 </span>                :<span class="lineCov">          3 :         int result = triangle(a, b, c);</span>
+<span class="lineNum">      56 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :         if(result == NotTriangle)</span>
+<span class="lineNum">      57 </span>                :<span class="lineCov">          3 :                 return 1;</span>
+<span class="lineNum">      58 </span>                :<span class="lineCov">          3 :         return 0;</span>
+<a name="59"><span class="lineNum">      59 </span>                :            : }</a>
+<span class="lineNum">      60 </span>                :            : 
+<span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 : int Test_IsInvalidInput(int a, int b, int c)</span>
+<span class="lineNum">      62 </span>                :            : {
+<span class="lineNum">      63 </span>                :<span class="lineNoCov">          0 :         int result = triangle(a, b, c);</span>
+<span class="lineNum">      64 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         if(result == InvalidInput)</span>
+<span class="lineNum">      65 </span>                :<span class="lineNoCov">          0 :                 return 1;</span>
+<span class="lineNum">      66 </span>                :<span class="lineNoCov">          0 :         return 0;</span>
+<span class="lineNum">      67 </span>                :            : }
+<a name="68"><span class="lineNum">      68 </span>                :            : </a>
+<span class="lineNum">      69 </span>                :            : 
+<span class="lineNum">      70 </span>                :<span class="lineNoCov">          0 : void OneBoundary()</span>
+<span class="lineNum">      71 </span>                :            : {
+<span class="lineNum">      72 </span>                :            :         //Normal Boundary Value
+<span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(1, 100, 100));</span>
+<span class="lineNum">      74 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(200, 100, 100));</span>
+<span class="lineNum">      75 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(100, 1, 100));</span>
+<span class="lineNum">      76 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(100, 200, 100));</span>
+<span class="lineNum">      77 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(100, 100, 1));</span>
+<span class="lineNum">      78 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(100, 100, 200));</span>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      80 </span>                :            : 
+<span class="lineNum">      81 </span>                :<span class="lineNoCov">          0 : void TwoBoundary()</span>
+<span class="lineNum">      82 </span>                :            : {
+<span class="lineNum">      83 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(100, 1, 1));</span>
+<span class="lineNum">      84 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(100, 1, 200));</span>
+<span class="lineNum">      85 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(100, 200, 1));</span>
+<span class="lineNum">      86 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(100, 200, 200));</span>
+<span class="lineNum">      87 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 100, 1));</span>
+<span class="lineNum">      88 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 100, 200));</span>
+<span class="lineNum">      89 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(200, 100, 1));</span>
+<span class="lineNum">      90 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(200, 100, 200));</span>
+<span class="lineNum">      91 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 1, 100));</span>
+<span class="lineNum">      92 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 200, 100));</span>
+<span class="lineNum">      93 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(200, 1, 100));</span>
+<span class="lineNum">      94 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(200, 200, 100));</span>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      96 </span>                :            : 
+<span class="lineNum">      97 </span>                :<span class="lineNoCov">          0 : void ThreeBoundary()</span>
+<span class="lineNum">      98 </span>                :            : {
+<span class="lineNum">      99 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(1, 1, 1));</span>
+<span class="lineNum">     100 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(200, 200, 200));</span>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     102 </span>                :            : 
+<span class="lineNum">     103 </span>                :<span class="lineNoCov">          0 : void IsoscelesClass()</span>
+<span class="lineNum">     104 </span>                :            : {
+<span class="lineNum">     105 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(2, 2, 3));</span>
+<span class="lineNum">     106 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(4, 5, 4));</span>
+<span class="lineNum">     107 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(7, 3, 7));</span>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     109 </span>                :            : 
+<span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 : void IsoscelesEdgeClass()</span>
+<span class="lineNum">     111 </span>                :            : {
+<span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-1, -1, 2));</span>
+<span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(201, 5, 201));</span>
+<span class="lineNum">     114 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-3, -3, 201));</span>
+<span class="lineNum">     115 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(2, 2, 3));</span>
+<span class="lineNum">     116 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(200, 199, 200));</span>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     118 </span>                :            : 
+<span class="lineNum">     119 </span>                :<span class="lineNoCov">          0 : void EquilateralClass()</span>
+<span class="lineNum">     120 </span>                :            : {
+<span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(2, 2, 2));</span>
+<span class="lineNum">     122 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(101, 101, 101));</span>
+<span class="lineNum">     123 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(199, 199, 199));</span>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     125 </span>                :            : 
+<span class="lineNum">     126 </span>                :<span class="lineNoCov">          0 : void EquilateralEdgeClass()</span>
+<span class="lineNum">     127 </span>                :            : {
+<span class="lineNum">     128 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-2, -2, -2));</span>
+<span class="lineNum">     129 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(201, 201, 201));</span>
+<span class="lineNum">     130 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(199, 199, 199));</span>
+<span class="lineNum">     131 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsEquilateral(1, 1, 1));</span>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     133 </span>                :            : 
+<span class="lineNum">     134 </span>                :<span class="lineNoCov">          0 : void ScaleneClass()</span>
+<span class="lineNum">     135 </span>                :            : {
+<span class="lineNum">     136 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsScalene(2, 3, 4));</span>
+<span class="lineNum">     137 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsScalene(2, 198, 199));</span>
+<span class="lineNum">     138 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsScalene(10, 11, 12));</span>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     140 </span>                :            : 
+<span class="lineNum">     141 </span>                :<span class="lineNoCov">          0 : void ScaleneEdgeClass()</span>
+<span class="lineNum">     142 </span>                :            : {
+<span class="lineNum">     143 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-2, 3, 4));</span>
+<span class="lineNum">     144 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(2, 198, 201));</span>
+<span class="lineNum">     145 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsScalene(2, 3, 4));</span>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     147 </span>                :            : 
+<span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 : void NotTriangleClass()</span>
+<span class="lineNum">     149 </span>                :            : {
+<span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 2, 3));</span>
+<span class="lineNum">     151 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 4, 5));</span>
+<span class="lineNum">     152 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 4, 200));</span>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     154 </span>                :            : 
+<span class="lineNum">     155 </span>                :<span class="lineNoCov">          0 : void NotTriangleEdgeClass()</span>
+<span class="lineNum">     156 </span>                :            : {
+<span class="lineNum">     157 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-1, 2, 3));</span>
+<span class="lineNum">     158 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 2, 3));</span>
+<span class="lineNum">     159 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_NotATriangle(1, 4, 201));</span>
+<span class="lineNum">     160 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsIsosceles(1, 200, 200));</span>
+<span class="lineNum">     161 </span>                :<span class="lineNoCov">          0 : }</span>
+<a name="162"><span class="lineNum">     162 </span>                :            : </a>
+<span class="lineNum">     163 </span>                :            : 
+<span class="lineNum">     164 </span>                :<span class="lineNoCov">          0 : void InvalidInputClass()</span>
+<span class="lineNum">     165 </span>                :            : {
+<span class="lineNum">     166 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-1, 1, 4));</span>
+<span class="lineNum">     167 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(1, -1, 4));</span>
+<span class="lineNum">     168 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(2, 1, -4));</span>
+<span class="lineNum">     169 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(201, 1, 4));</span>
+<span class="lineNum">     170 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(1, 201, 4));</span>
+<span class="lineNum">     171 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(2, 1, 202));</span>
+<span class="lineNum">     172 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(-1, 1, 400));</span>
+<span class="lineNum">     173 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(1, -1, 400));</span>
+<span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(200, 1, -4));</span>
+<span class="lineNum">     175 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(200, -1, -4));</span>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">     177 </span>                :            : 
+<span class="lineNum">     178 </span>                :<span class="lineCov">          1 : void TestC0_1()</span>
+<span class="lineNum">     179 </span>                :            : {
+<span class="lineNum">     180 </span>                :<span class="lineCov">          1 :         CU_ASSERT(Test_IsEquilateral(37, 37, 37));</span>
+<span class="lineNum">     181 </span>                :<span class="lineCov">          1 :         CU_ASSERT(Test_IsIsosceles(37, 39, 37));</span>
+<span class="lineNum">     182 </span>                :<span class="lineCov">          1 :         CU_ASSERT(Test_IsScalene(37, 38, 39));</span>
+<span class="lineNum">     183 </span>                :<span class="lineCov">          1 :         CU_ASSERT(Test_NotATriangle(1, 2, 3));</span>
+<span class="lineNum">     184 </span>                :<span class="lineCov">          1 :         CU_ASSERT(Test_NotATriangle(1, 3, 2));</span>
+<span class="lineNum">     185 </span>                :<span class="lineCov">          1 :         CU_ASSERT(Test_NotATriangle(3, 2, 1));</span>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     187 </span>                :            : 
+<span class="lineNum">     188 </span>                :<span class="lineNoCov">          0 : void TestC1_1()</span>
+<span class="lineNum">     189 </span>                :            : {
+<span class="lineNum">     190 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(201, 20, 20));</span>
+<span class="lineNum">     191 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(20, 201, 20));</span>
+<span class="lineNum">     192 </span>                :<span class="lineNoCov">          0 :         CU_ASSERT(Test_IsInvalidInput(20, 20, 201));</span>
+<span class="lineNum">     193 </span>                :<span class="lineNoCov">          0 : }</span>
+<a name="194"><span class="lineNum">     194 </span>                :            : </a>
+<span class="lineNum">     195 </span>                :            : 
+<span class="lineNum">     196 </span>                :<span class="lineCov">          1 : int AddTestMainModule()</span>
+<span class="lineNum">     197 </span>                :            : {
+<span class="lineNum">     198 </span>                :<span class="lineCov">          1 :         CU_pSuite pSuite = NULL;</span>
+<span class="lineNum">     199 </span>                :<span class="lineCov">          1 :         pSuite = CU_add_suite(&quot;C1 Coverage Test&quot;, InitSuite, EndSuite);</span>
+<span class="lineNum">     200 </span>                :<span class="lineCov">          1 :         CU_add_test(pSuite, &quot;C0-1&quot;, TestC0_1);</span>
+<span class="lineNum">     201 </span>                :            :         //CU_add_test(pSuite, &quot;C1-1&quot;, TestC1_1);
+<span class="lineNum">     202 </span>                :            : /*      pSuite = CU_add_suite(&quot;C0 Coverage Test&quot;, InitSuite, EndSuite);
+<span class="lineNum">     203 </span>                :            :         CU_add_test(pSuite, &quot;C0-1&quot;, TestC0_1);
+<span class="lineNum">     204 </span>                :            : */
+<span class="lineNum">     205 </span>                :            :         
+<span class="lineNum">     206 </span>                :            : /*
+<span class="lineNum">     207 </span>                :            :         pSuite = CU_add_suite(&quot;BoundaryValueTest&quot;, InitSuite, EndSuite);  
+<span class="lineNum">     208 </span>                :            :         CU_add_test(pSuite, &quot;OneBoundary&quot;, OneBoundary);
+<span class="lineNum">     209 </span>                :            :         CU_add_test(pSuite, &quot;TwoBoundary&quot;, TwoBoundary);
+<span class="lineNum">     210 </span>                :            :         CU_add_test(pSuite, &quot;ThreeBoundary&quot;, ThreeBoundary);
+<span class="lineNum">     211 </span>                :            :         
+<span class="lineNum">     212 </span>                :            :         pSuite = CU_add_suite(&quot;EquivalenceClassTest&quot;, InitSuite, EndSuite);
+<span class="lineNum">     213 </span>                :            :         CU_add_test(pSuite, &quot;IsoscelesClass&quot;, IsoscelesClass);
+<span class="lineNum">     214 </span>                :            :         CU_add_test(pSuite, &quot;EquilateralClass&quot;, EquilateralClass);
+<span class="lineNum">     215 </span>                :            :         CU_add_test(pSuite, &quot;ScaleneClass&quot;, ScaleneClass);
+<span class="lineNum">     216 </span>                :            :         CU_add_test(pSuite, &quot;NotTriangleClass&quot;, NotTriangleClass);
+<span class="lineNum">     217 </span>                :            :         CU_add_test(pSuite, &quot;InvalidInputClass&quot;, InvalidInputClass);
+<span class="lineNum">     218 </span>                :            : 
+<span class="lineNum">     219 </span>                :            :         pSuite = CU_add_suite(&quot;EdgeTest&quot;, InitSuite, EndSuite);
+<span class="lineNum">     220 </span>                :            :         CU_add_test(pSuite, &quot;IsoscelesEdgeClass&quot;, IsoscelesClass);
+<span class="lineNum">     221 </span>                :            :         CU_add_test(pSuite, &quot;EquilateralEdgeClass&quot;, EquilateralClass);
+<span class="lineNum">     222 </span>                :            :         CU_add_test(pSuite, &quot;ScaleneEdgeClass&quot;, ScaleneClass);
+<span class="lineNum">     223 </span>                :            :         CU_add_test(pSuite, &quot;NotTriangleEdgeClass&quot;, NotTriangleClass);
+<span class="lineNum">     224 </span>                :            : */
+<span class="lineNum">     225 </span>                :<span class="lineCov">          1 :         return 0;</span>
+<span class="lineNum">     226 </span>                :            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.9</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
